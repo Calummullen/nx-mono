@@ -1,0 +1,9 @@
+{
+  "name": "beths-doggy-den",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/beths-doggy-den",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project beths-doggy-den --web",
+  "targets": {}
+}
