@@ -14,7 +14,19 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@calum-business-mono/shared-components": [
+        "shared-components/src/index.ts"
+      ],
+      "@calum-business-mono/shared-components/server": [
+        "shared-components/src/server.ts"
+      ],
+      "@calum-business-mono/shared-components/src/lib/*": [
+        "shared-components/src/lib/*"
+      ],
+      "@public/images/*": ["public/images/*"],
+      "@public/fonts/*": ["public/fonts/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
