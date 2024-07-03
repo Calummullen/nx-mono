@@ -24,6 +24,9 @@
       "@calum-business-mono/shared-components/src/lib/*": [
         "shared-components/src/lib/*"
       ],
+      "@calum-business-mono/shared-components/src/email/*": [
+        "shared-components/src/email/*"
+      ],
       "@public/images/*": ["public/images/*"],
       "@public/fonts/*": ["public/fonts/*"]
     }

@@ -1,5 +1,5 @@
 import { NextRequest } from 'next/server';
-import { EmailTemplate } from '@utils/email-template';
+import { EmailTemplate } from '@calum-business-mono/shared-components/src/email/email-template';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
