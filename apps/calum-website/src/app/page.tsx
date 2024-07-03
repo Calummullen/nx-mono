@@ -15,7 +15,7 @@ const LandingPage: FC = () => {
     <div
       className={`text-6xl h-full text-primary ${lemonMilk.className} flex flex-row h-screen text-center`}
     >
-      <h1 className="m-auto">Under Construction</h1>
+      <h1 className="m-auto">Under Construction!</h1>
     </div>
   );
 };
