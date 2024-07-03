@@ -11,7 +11,17 @@ import {
 } from '@calum-business-mono/shared-components/src/lib/ReviewSummary';
 import { Contact } from '@calum-business-mono/shared-components/src/lib/Contact';
 import { Reviews } from '@calum-business-mono/shared-components/src/lib/Reviews';
-import { ExecuteScrollType } from '@calum-business-mono/shared-components/src/lib/types';
+import { NavbarData } from '@calum-business-mono/shared-components/src/lib/types';
+import logo from '@public/images/logo.jpg';
+
+const coffeeSpark = localFont({
+  src: [
+    {
+      path: '../../public/fonts/coffee-spark/Coffee-Spark.ttf',
+      weight: '400',
+    },
+  ],
+});
 
 const happyMemories = localFont({
   src: [
@@ -38,7 +48,7 @@ export const Main: FC<{ reviews: Review[] }> = ({ reviews }) => {
   const servicesRef = useRef<HTMLDivElement>(null);
   const reviewsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-  const executeScroll = (view: ExecuteScrollType) => {
+  const executeScroll = (view: string) => {
     switch (view) {
       case 'home':
         homeRef.current?.scrollIntoView();
@@ -58,11 +68,42 @@ export const Main: FC<{ reviews: Review[] }> = ({ reviews }) => {
     }
   };
 
+  const navbarData: NavbarData = {
+    title: "Beth's Doggy Den",
+    links: [
+      {
+        displayName: 'Home',
+        name: 'home',
+      },
+      {
+        displayName: 'About',
+        name: 'about',
+      },
+      {
+        displayName: 'Services',
+        name: 'services',
+      },
+      {
+        displayName: 'Reviews',
+        name: 'reviews',
+      },
+      {
+        displayName: 'Contact',
+        name: 'contact',
+      },
+    ],
+    logo: logo,
+  };
+
   const getReviewsByRating = (starNumber: number) =>
     setReviews(reviews.filter((r) => r.rating === starNumber));
   return (
     <div className="w-full">
-      <Navbar executeScroll={(ref) => executeScroll(ref)} />
+      <Navbar
+        executeScroll={(ref) => executeScroll(ref)}
+        font={coffeeSpark}
+        data={navbarData}
+      />
       <div ref={homeRef} className="flex flex-col mt-32 scroll-m-[128px]">
         <div className="bg-center md:bg-top bg-cover bg-[url('../../public/images/c3.jpg')] md:bg-[url('../../public/images/background-3.jpg')] bg-no-repeat md:h-[800px]">
           <div
