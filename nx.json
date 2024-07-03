@@ -25,29 +25,12 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    }
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } }
   ],
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "tailwind",
-        "linter": "eslint"
-      }
-    },
-    "@nx/react": {
-      "library": {}
-    }
+    "@nx/next": { "application": { "style": "tailwind", "linter": "eslint" } },
+    "@nx/react": { "library": {} }
   },
-  "nxCloudAccessToken": "replaced in env"
+  "nxCloudAccessToken": "ZjA0Y2Q5MDMtYzBkMS00NjQ3LThjMzItZDY5ZjNjOWIzMTU2fHJlYWQtd3JpdGU="
 }
