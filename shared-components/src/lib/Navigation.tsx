@@ -21,7 +21,11 @@ const Navbar: FC<{
         <div className="flex justify-between p-4">
           <div className=" flex items-center gap-6">
             {logo && <Image width={150} height={150} src={logo} alt="Logo" />}
-            <span className={`${font.className} hidden md:flex my-2 text-5xl`}>
+            <span
+              className={`${font.className} ${
+                logo && 'hidden md:flex'
+              } my-2 text-4xl`}
+            >
               {title}
             </span>
           </div>
