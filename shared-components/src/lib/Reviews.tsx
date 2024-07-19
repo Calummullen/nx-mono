@@ -33,17 +33,31 @@ export const Reviews: FC<{ reviews: Review[] }> = ({ reviews }) => {
         } ${isVisibleText ? 'opacity-100 translate-x-0 left-0' : 'opacity-0'}`}
       >
         {reviews.length ? (
-          reviews.map(
-            ({ reviewer, review_date, rating, description }, index) => (
-              <ReviewTile
-                key={index}
-                reviewer={reviewer}
-                rating={rating}
-                description={description}
-                review_date={review_date}
-              />
+          reviews
+            .sort((a, b) => +b.review_date - +a.review_date)
+            .map(
+              (
+                {
+                  reviewer,
+                  review_date,
+                  rating,
+                  description,
+                  source,
+                  sourceLink,
+                },
+                index
+              ) => (
+                <ReviewTile
+                  key={index}
+                  reviewer={reviewer}
+                  rating={rating}
+                  description={description}
+                  review_date={review_date}
+                  source={source}
+                  sourceLink={sourceLink}
+                />
+              )
             )
-          )
         ) : (
           <p>No Reviews</p>
         )}
@@ -57,16 +71,28 @@ const ReviewTile: FC<Review> = ({
   description,
   reviewer,
   rating,
+  source,
+  sourceLink,
 }) => {
   return (
     <div className="flex bg-primary bg-opacity-30 p-4 my-2 rounded-md flex-col gap-2 w-full">
-      <p className={`${caviarBold.className}`}>{reviewer}</p>
+      <p className={`${caviarBold.className}`}>
+        {reviewer} via{' '}
+        <a
+          className="underline cursor-pointer"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={sourceLink}
+        >
+          {source}
+        </a>
+      </p>
       <div>
         <div className="flex items-center">
           <svg
-            className={`w-4 h-4 ${
+            className={`w-4 h-4  ${
               rating > 1 ? 'text-yellow-300' : 'text-gray-300'
-            } ms-1`}
+            }`}
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"

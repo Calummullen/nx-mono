@@ -11,6 +11,8 @@ export interface Review {
   rating: number;
   description: string;
   review_date: Date;
+  source: 'Facebook' | 'Rover';
+  sourceLink: string;
 }
 
 interface Map {
