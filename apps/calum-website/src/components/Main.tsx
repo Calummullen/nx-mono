@@ -90,25 +90,25 @@ export const Main: FC = () => {
 
         <div
           ref={productRef}
-          className="flex flex-col scroll-m-[96px] bg-blue-200"
+          className="flex flex-col scroll-m-[88px] bg-blue-200"
         >
           <Product />
         </div>
         <div
           ref={pricingRef}
-          className="flex flex-col scroll-m-[96px] bg-green-200"
+          className="flex flex-col scroll-m-[88px] bg-green-200"
         >
           <Pricing />
         </div>
         <div
           ref={portfolioRef}
-          className="flex flex-col scroll-m-[96px] bg-green-200"
+          className="flex flex-col scroll-m-[88px] bg-green-200"
         >
           <Portfolio />
         </div>
         <div
           ref={contactRef}
-          className="flex flex-col scroll-m-[96px] bg-green-200"
+          className="flex flex-col scroll-m-[88px] bg-green-200"
         >
           <Pricing />
         </div>
