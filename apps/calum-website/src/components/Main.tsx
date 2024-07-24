@@ -78,7 +78,7 @@ export const Main: FC = () => {
         data={navbarData}
         additionalStyles="border-r-[1px] border-gray-300 pr-4 last:border-r-0 text-sm"
       />
-      <div className="flex flex-col mt-20 scroll-m-[96px] bg-red-200">
+      <div className="flex flex-col mt-20 scroll-m-[96px] bg-blue-200">
         {/* <div className="bg-center md:bg-top bg-cover bg-[url('../../public/images/c3.jpg')] md:bg-[url('../../public/images/background-3.jpg')] bg-no-repeat md:h-[800px]"> */}
 
         <div
@@ -90,7 +90,7 @@ export const Main: FC = () => {
 
         <div
           ref={productRef}
-          className="flex flex-col scroll-m-[88px] bg-blue-200"
+          className="flex flex-col scroll-m-[88px] bg-blue-200 m-4 lg:m-24"
         >
           <Product />
         </div>

@@ -37,7 +37,7 @@ const coolvetica = localFont({
 */
 const Product: FC = () => {
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 m-24">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
       <ProductDetails
         title="Included"
         listItems={[
@@ -130,7 +130,9 @@ const ProductDetails: FC<{
                     {heading}
                   </div>
                   <ol className="ps-[52px] mt-2 list-disc list-outside text-lg">
-                    <li className={`${coolvetica.className}`}>{subHeading}</li>
+                    <li key={index} className={`${coolvetica.className}`}>
+                      {subHeading}
+                    </li>
                   </ol>
                 </li>
               ))}
@@ -138,7 +140,7 @@ const ProductDetails: FC<{
           </div>
           <h2 className="absolute text-center flex top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <span
-              className={`bg-blue-200 px-2 text-lg md:text-4xl font-medium ${lemonMilkBold.className}`}
+              className={`bg-blue-200 px-2 text-3xl md:text-4xl font-medium ${lemonMilkBold.className}`}
             >
               What&apos;s{' '}
               <span

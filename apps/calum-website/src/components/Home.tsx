@@ -17,44 +17,32 @@ const lemonMilk = localFont({
 const Home: FC = () => {
   const textRef = useRef(null);
   const isVisibleText = useIsVisible(textRef);
-  const imageRef = useRef(null);
-  const isVisibleImage = useIsVisible(imageRef);
+  // const imageRef = useRef(null);
+  // const isVisibleImage = useIsVisible(imageRef);
   return (
-    <div className="grid lg:grid-cols-2 m-24 lg:h-[492px]">
-      <div className="flex flex-col text-start gap-24">
-        <div>
-          <h1 className={`${lemonMilk.className} text-7xl md:text-9xl `}>
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString('Welcome. ')
-                  .pauseFor(1000)
-                  .typeString("I'm Calum")
-                  .start();
-              }}
-              options={{
-                cursor: '',
-                delay: 75,
-              }}
-            />
-          </h1>
-          <Image
-            ref={imageRef}
-            className={`transition-opacity duration-1000 delay-[2500ms] absolute left-[30rem] top-[24rem] ${
-              isVisibleImage ? 'opacity-100' : 'opacity-0'
-            }`}
-            width={175}
-            height={175}
-            src={arrow}
-            alt="arrow down"
+    <div className="grid xl:grid-cols-2 m-12 lg:m-24">
+      <div className="flex flex-col text-start gap-12">
+        <h1 className={`${lemonMilk.className} text-8xl md:text-9xl`}>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString('Welcome. ')
+                .pauseFor(1000)
+                .typeString("I'm Calum")
+                .start();
+            }}
+            options={{
+              cursor: '',
+              delay: 75,
+            }}
           />
-        </div>
+        </h1>
         <h2
           ref={textRef}
           className={`${
             lemonMilk.className
-          } text-2xl md:text-3xl transition-all duration-1000 delay-[3000ms] relative ${
-            isVisibleText ? 'opacity-100 translate-y-20 -top-20' : 'opacity-0'
+          } text-2xl md:text-3xl transition-opacity duration-1000 delay-[2500ms] relative ${
+            isVisibleText ? 'opacity-100' : 'opacity-0'
           }`}
         >
           I&apos;m a Senior Software Engineer who specialises in creating custom

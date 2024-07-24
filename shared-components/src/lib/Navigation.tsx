@@ -32,6 +32,7 @@ const Navbar: FC<{
           <div className="hidden lg:flex md:items-center md:space-x-4">
             {links.map(({ displayName, name }) => (
               <Link
+                key={name}
                 onClick={() => executeScroll(name)}
                 to={name}
                 smooth
